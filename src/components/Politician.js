@@ -11,7 +11,7 @@ export default function Politician({name, title, leg, age, party, image, cart, s
 
 	return (
 
-        <div class="border">
+        <div className="border">
             <h4>
                 <img src={image} width="300rem" height="330rem"/>
             </h4>
