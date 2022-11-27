@@ -28,7 +28,7 @@ function App() {
 
   function filtering(ptype) {
     // let filter = data.filter(type => type.party === ptype);
-    console.log(data)
+    // setFilter(data.filter(item => item.party === ptype))
     let filter = data.filter(item => item.party === ptype)
     console.log(filter)
     return filter;
@@ -57,8 +57,8 @@ function App() {
               name="radio-buttons-group"
               onChange={handleType}
             >
-              <FormControlLabel value="democrat" eventkey="democrat" control={<Radio />} label="Democrat" />
-              <FormControlLabel value="republican" eventkey="republican" control={<Radio />} label="Republican" />
+              <FormControlLabel value="Democrat" eventkey="democrat" control={<Radio />} label="Democrat" />
+              <FormControlLabel value="Republican" eventkey="republican" control={<Radio />} label="Republican" />
               <FormControlLabel value="all" eventkey="All" control={<Radio />} label="All" />
 
             </RadioGroup>
@@ -109,7 +109,7 @@ function App() {
       </div>
 
       <div className="people">
-        {data.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
+        {data.map((item) => ( // TODO: map bakeryData to BakeryItem components
           // <p>Bakery Item {index}</p> // replace with BakeryItem componen
           <Politician name={item.name} title={item.title} leg={item.legislativebody} age={item.age} party={item.party} image={item.image} cart={cart} setCart={setCart} />
         ))}
