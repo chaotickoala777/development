@@ -4,7 +4,7 @@
       "title": "Speaker of the House of Representatives",
       "legislativebody": "House of Representatives",
       "age": 82,
-      "party": "Democrat",
+      "party": "democrat",
       "image": "images/nancy.jpg"
     },
     {
@@ -12,7 +12,7 @@
       "title": "Republican Leader",
       "legislativebody": "House of Representatives",
       "age": 57,
-      "party": "Republican",
+      "party": "republican",
       "image": "images/kevin.jpeg"
     },
     {
@@ -20,7 +20,7 @@
       "title": "Majority Leader",
       "legislativebody": "House of Representatives",
       "age": 83,
-      "party": "Democrat",
+      "party": "democrat",
       "image": "images/steny.jpeg"
     },
     {
@@ -28,7 +28,7 @@
       "title": "Republican Whip",
       "legislativebody": "House of Representatives",
       "age": 57,
-      "party": "Republican",
+      "party": "republican",
       "image": "images/steve.jpeg"
     },
     {
@@ -36,7 +36,7 @@
       "title": "Assistant Speaker",
       "legislativebody": "House of Representatives",
       "age": 59,
-      "party": "Democrat",
+      "party": "democrat",
       "image": "images/clark.jpeg"
     },
     {
@@ -44,7 +44,7 @@
       "title": "Republican Conference Chairman",
       "legislativebody": "House of Representatives",
       "age": 38,
-      "party": "Republican",
+      "party": "republican",
       "image": "images/stef.jpg"
     },
     {
@@ -52,7 +52,7 @@
       "title": "Democratic Caucus Chairman",
       "legislativebody": "House of Representatives",
       "age": 52,
-      "party": "Democrat",
+      "party": "democrat",
       "image": "images/jeff.jpeg"
     },
     {
@@ -60,7 +60,7 @@
       "title": "Republican Policy Committee Chairman",
       "legislativebody": "House of Representatives",
       "age": 68,
-      "party": "Republican",
+      "party": "republican",
       "image": "images/palm.jpeg"
     },
     {
@@ -68,7 +68,7 @@
       "title": "Democratic Leader",
       "legislativebody": "Senate",
       "age": 72,
-      "party": "Democrat",
+      "party": "democrat",
       "image": "images/chuck.jpeg"
     },
     {
@@ -76,7 +76,7 @@
       "title": "Republican Leader",
       "legislativebody": "Senate",
       "age": 80,
-      "party": "Republican",
+      "party": "republican",
       "image": "images/mitch.jpeg"
     },
     {
@@ -84,7 +84,7 @@
       "title": "Assistant Democratic Leader",
       "legislativebody": "Senate",
       "age": 72,
-      "party": "Democrat",
+      "party": "democrat",
       "image": "images/pat.jpeg"
     },
     {
@@ -92,7 +92,7 @@
       "title": "Vice Chair of Conference",
       "legislativebody": "Senate",
       "age": 73,
-      "party": "Democrat",
+      "party": "democrat",
       "image": "images/warren.jpeg"
     }
   ]
