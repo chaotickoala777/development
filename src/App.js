@@ -28,17 +28,31 @@ function App() {
   //   setFilter(data);
   // }, []);
 
-  function filtering(ptype) {
+  function filtering_p(ptype) {
     // setFilter(data.filter(item => item.party === ptype))
     let filter = data.filter(item => item.party === ptype)
     console.log(filter)
     return filter;
   }
 
-  function handleType(e) {
+  function handleType_p(e) {
     let typeFilter = e.target.value;
     typeFilter !== "all"
-      ? setFilter(filtering(typeFilter))
+      ? setFilter(filtering_p(typeFilter))
+      : setFilter(data);
+  }
+
+  function filtering_c(ptype) {
+    // setFilter(data.filter(item => item.party === ptype))
+    let filtering = [...filter].filter(item => item.legislativebody === ptype)
+    console.log(filtering)
+    return filtering;
+  }
+
+  function handleType_c(e) {
+    let typeFilter = e.target.value;
+    typeFilter !== "all"
+      ? setFilter(filtering_c(typeFilter))
       : setFilter(data);
   }
 
@@ -56,7 +70,7 @@ function App() {
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="all"
               name="radio-buttons-group"
-              onChange={handleType}
+              onChange={handleType_p}
             >
               <FormControlLabel value="Democrat" eventkey="democrat" control={<Radio />} label="Democrat" />
               <FormControlLabel value="Republican" eventkey="republican" control={<Radio />} label="Republican" />
@@ -78,9 +92,10 @@ function App() {
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="all"
               name="radio-buttons-group"
+              onChange={handleType_c}
             >
-              <FormControlLabel value="house" control={<Radio />} label="House" />
-              <FormControlLabel value="senate" control={<Radio />} label="Senate" />
+              <FormControlLabel value="House of Representatives" control={<Radio />} label="House" />
+              <FormControlLabel value="Senate" control={<Radio />} label="Senate" />
               <FormControlLabel value="all" control={<Radio />} label="All" />
 
             </RadioGroup>
