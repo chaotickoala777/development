@@ -91,7 +91,7 @@ function App() {
 
         <div>
           <h3>Supporters</h3>
-          <p>
+          <div>
 
             {
             cart.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
@@ -101,7 +101,7 @@ function App() {
             </div>
             ))}
 
-          </p>
+          </div>
           <p>Votes: {count}</p>
     
           {/* TODO: render a list of items in the cart */}

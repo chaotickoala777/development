@@ -31,14 +31,19 @@ export default function Politician({name, title, leg, age, party, image, cart, s
 
             <button onClick={() => {
                     // setTotal(total + price) 
-                    setCart([...cart, name])
-                    setCount(count + 1)
+                    let prev = cart
+                    let update = [...new Set([...cart, name])]
+                    setCart(update)
+                    prev.includes(name)
+                    ? setCount(count)
+                    : setCount(count + 1)
+                    // setCount(count + 1)
                 }
             }>In Support</button>
 
             <button onClick={() => {
                     console.log({name})
-                    const newList = cart.filter((item) => item.name !== {name});
+                    const newList = cart.filter((item) => item.name !== name);
                     setCart(newList)
                     count !== 0
                     ? setCount(count - 1)
