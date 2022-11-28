@@ -5,6 +5,7 @@
       "legislativebody": "House of Representatives",
       "age": 82,
       "party": "Democrat",
+      "lobby": 154236,
       "image": "images/nancy.jpg"
     },
     {
@@ -13,6 +14,7 @@
       "legislativebody": "House of Representatives",
       "age": 57,
       "party": "Republican",
+      "lobby": 524415,
       "image": "images/kevin.jpeg"
     },
     {
@@ -21,6 +23,7 @@
       "legislativebody": "House of Representatives",
       "age": 83,
       "party": "Democrat",
+      "lobby": 162700,
       "image": "images/steny.jpeg"
     },
     {
@@ -29,6 +32,7 @@
       "legislativebody": "House of Representatives",
       "age": 57,
       "party": "Republican",
+      "lobby": 250161,
       "image": "images/steve.jpeg"
     },
     {
@@ -37,6 +41,7 @@
       "legislativebody": "House of Representatives",
       "age": 59,
       "party": "Democrat",
+      "lobby": 112135,
       "image": "images/clark.jpeg"
     },
     {
@@ -45,6 +50,7 @@
       "legislativebody": "House of Representatives",
       "age": 38,
       "party": "Republican",
+      "lobby": 94287,
       "image": "images/stef.jpg"
     },
     {
@@ -53,6 +59,7 @@
       "legislativebody": "House of Representatives",
       "age": 52,
       "party": "Democrat",
+      "lobby": 141134,
       "image": "images/jeff.jpeg"
     },
     {
@@ -61,6 +68,7 @@
       "legislativebody": "House of Representatives",
       "age": 68,
       "party": "Republican",
+      "lobby": 401837,
       "image": "images/palm.jpeg"
     },
     {
@@ -69,6 +77,7 @@
       "legislativebody": "Senate",
       "age": 72,
       "party": "Democrat",
+      "lobby": 119263,
       "image": "images/chuck.jpeg"
     },
     {
@@ -77,6 +86,7 @@
       "legislativebody": "Senate",
       "age": 80,
       "party": "Republican",
+      "lobby": 537604,
       "image": "images/mitch.jpeg"
     },
     {
@@ -85,6 +95,7 @@
       "legislativebody": "Senate",
       "age": 72,
       "party": "Democrat",
+      "lobby": 347486,
       "image": "images/pat.jpeg"
     },
     {
@@ -93,6 +104,7 @@
       "legislativebody": "Senate",
       "age": 73,
       "party": "Democrat",
+      "lobby": 95000,
       "image": "images/warren.jpeg"
     }
   ]

@@ -2,13 +2,12 @@ import "./politician.css";
 import { useState } from "react";
 
 
-export default function Politician({name, title, leg, age, party, image, cart, setCart, count, setCount}) {
+export default function Politician({name, title, leg, age, party, lobby, image, cart, setCart, count, setCount, money, setMoney}) {
 
     // const name = props.name;
     // const description = props.description;
     // const price = props.price;
     // const image = props.image;
-
 
 	return (
 
@@ -27,6 +26,8 @@ export default function Politician({name, title, leg, age, party, image, cart, s
                 Age: {age}
                 <br/>
                 Party: {party}
+                <br/>
+                Money from lobbyists: {lobby}
             </h5>
 
             <button onClick={() => {
@@ -34,9 +35,13 @@ export default function Politician({name, title, leg, age, party, image, cart, s
                     let prev = cart
                     let update = [...new Set([...cart, name])]
                     setCart(update)
-                    prev.includes(name)
-                    ? setCount(count)
-                    : setCount(count + 1)
+                    if (prev.includes(name)) {
+                        setCount(count)
+                    } else {
+                        setCount(count + 1)
+                        setMoney(money + lobby)
+                    }
+                    
                     // setCount(count + 1)
                 }
             }>In Support</button>
@@ -48,9 +53,12 @@ export default function Politician({name, title, leg, age, party, image, cart, s
                     // count !== 0
                     // ? setCount(count - 1)
                     // : setCount(0)
-                    ! prev.includes(name)
-                    ? setCount(count)
-                    : setCount(count - 1)
+                    if (!prev.includes(name)) {
+                        setCount(count)
+                    } else {
+                        setCount(count - 1)                        
+                        setMoney(money - lobby)
+                    }
                     
                     console.log(newList)
                     console.log(cart)

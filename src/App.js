@@ -23,6 +23,8 @@ function App() {
   const [filter, setFilter] = useState(data);
 
   const [count, setCount] = useState(0);
+  const [money, setMoney] = useState(0);
+
 
 
   // useEffect(() => {
@@ -165,6 +167,7 @@ function App() {
 
           </div>
           <p>Votes: {count}</p>
+          <p>Lobbyist funding: {money}</p>
     
           {/* TODO: render a list of items in the cart */}
         </div>
@@ -174,7 +177,7 @@ function App() {
       <div className="people">
         {filter.map((item) => ( // TODO: map bakeryData to BakeryItem components
           // <p>Bakery Item {index}</p> // replace with BakeryItem componen
-          <Politician name={item.name} title={item.title} leg={item.legislativebody} age={item.age} party={item.party} image={item.image} cart={cart} setCart={setCart} count={count} setCount={setCount} />
+          <Politician name={item.name} title={item.title} leg={item.legislativebody} age={item.age} party={item.party} lobby={item.lobby} image={item.image} cart={cart} setCart={setCart} count={count} setCount={setCount} money={money} setMoney={setMoney} />
         ))}
       </div>
 
