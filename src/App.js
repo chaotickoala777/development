@@ -44,9 +44,9 @@ function App() {
 
   function filtering_c(ptype) {
     // setFilter(data.filter(item => item.party === ptype))
-    let filtering = [...filter].filter(item => item.legislativebody === ptype)
-    console.log(filtering)
-    return filtering;
+    let filter = data.filter(item => item.legislativebody === ptype)
+    console.log(filter)
+    return filter;
   }
 
   function handleType_c(e) {
