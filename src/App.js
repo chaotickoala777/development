@@ -20,7 +20,7 @@ function App() {
   // const [total, setTotal] = useState(0)
   const [cart, setCart] = useState([])
   // const [value, setValue] = useState("all");
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState(data);
   const [count, setCount] = useState(0);
 
 
@@ -86,6 +86,39 @@ function App() {
             </RadioGroup>
           </FormControl>
 
+        </div>
+
+        <br></br>
+        <br></br>
+
+        {/* onChange={setFilter([...data].sort((a, b) => a.age - b.age))}  */}
+
+        <div>
+
+          <FormControl>
+            <FormLabel id="demo-radio-buttons-group-label">Sort by:</FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="reset"
+              name="radio-buttons-group"
+            >
+              <FormControlLabel value="agea" control={<Radio />} label="Age (ascending)" />
+              <FormControlLabel value="aged" control={<Radio />} label="Age (descending)" />
+              <FormControlLabel value="reset" control={<Radio />} label="Reset" />
+
+            </RadioGroup>
+          </FormControl>
+
+            {/* <button onClick={() => {
+                  setFilter([...filter].sort((a, b) => a.age - b.age))
+                }
+            }>Sort by: Age - ascending</button>
+
+
+            <button onClick={() => {
+                  setFilter([...filter].sort((a, b) => b.age - a.age))
+                }
+            }>Sort by: Age - descending</button> */}
 
         </div>
 
@@ -110,7 +143,7 @@ function App() {
       </div>
 
       <div className="people">
-        {data.map((item) => ( // TODO: map bakeryData to BakeryItem components
+        {filter.map((item) => ( // TODO: map bakeryData to BakeryItem components
           // <p>Bakery Item {index}</p> // replace with BakeryItem componen
           <Politician name={item.name} title={item.title} leg={item.legislativebody} age={item.age} party={item.party} image={item.image} cart={cart} setCart={setCart} count={count} setCount={setCount} />
         ))}
