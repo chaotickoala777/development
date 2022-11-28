@@ -27,7 +27,6 @@ function App() {
   // }, []);
 
   function filtering(ptype) {
-    // let filter = data.filter(type => type.party === ptype);
     // setFilter(data.filter(item => item.party === ptype))
     let filter = data.filter(item => item.party === ptype)
     console.log(filter)
