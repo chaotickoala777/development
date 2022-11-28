@@ -21,6 +21,8 @@ function App() {
   const [cart, setCart] = useState([])
   // const [value, setValue] = useState("all");
   const [filter, setFilter] = useState("all");
+  const [count, setCount] = useState(0);
+
 
   // useEffect(() => {
   //   setFilter(data);
@@ -88,8 +90,8 @@ function App() {
         </div>
 
         <div>
-          <h2>Supporters</h2>
-          <h3>
+          <h3>Supporters</h3>
+          <p>
 
             {
             cart.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
@@ -99,8 +101,8 @@ function App() {
             </div>
             ))}
 
-          </h3>
-          {/* <h3>Total: {total}</h3> */}
+          </p>
+          <p>Votes: {count}</p>
     
           {/* TODO: render a list of items in the cart */}
         </div>
@@ -110,7 +112,7 @@ function App() {
       <div className="people">
         {data.map((item) => ( // TODO: map bakeryData to BakeryItem components
           // <p>Bakery Item {index}</p> // replace with BakeryItem componen
-          <Politician name={item.name} title={item.title} leg={item.legislativebody} age={item.age} party={item.party} image={item.image} cart={cart} setCart={setCart} />
+          <Politician name={item.name} title={item.title} leg={item.legislativebody} age={item.age} party={item.party} image={item.image} cart={cart} setCart={setCart} count={count} setCount={setCount} />
         ))}
       </div>
 
