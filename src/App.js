@@ -21,6 +21,7 @@ function App() {
   const [cart, setCart] = useState([])
   // const [value, setValue] = useState("all");
   const [filter, setFilter] = useState(data);
+
   const [count, setCount] = useState(0);
 
 
@@ -30,9 +31,9 @@ function App() {
 
   function filtering_p(ptype) {
     // setFilter(data.filter(item => item.party === ptype))
-    let filter = data.filter(item => item.party === ptype)
-    console.log(filter)
-    return filter;
+    let filtering = data.filter(item => item.party === ptype)
+    console.log(filtering)
+    return filtering;
   }
 
   function handleType_p(e) {
@@ -44,9 +45,8 @@ function App() {
 
   function filtering_c(ptype) {
     // setFilter(data.filter(item => item.party === ptype))
-    let filter = data.filter(item => item.legislativebody === ptype)
-    console.log(filter)
-    return filter;
+    let filtering = data.filter(item => item.legislativebody === ptype)
+    return filtering;
   }
 
   function handleType_c(e) {
@@ -54,6 +54,19 @@ function App() {
     typeFilter !== "all"
       ? setFilter(filtering_c(typeFilter))
       : setFilter(data);
+  }
+
+  function age_change(e) {
+    let typeFilter = e.target.value;
+    if (typeFilter === "agea") {
+      setFilter([...filter].sort((a, b) => a.age - b.age))
+    }
+    if (typeFilter === "aged") {
+      setFilter([...filter].sort((a, b) => b.age - a.age))
+    }
+    if (typeFilter === "reset") {
+      setFilter(data)
+    }
   }
 
   return (
@@ -116,6 +129,7 @@ function App() {
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="reset"
               name="radio-buttons-group"
+              onChange={age_change}
             >
               <FormControlLabel value="agea" control={<Radio />} label="Age (ascending)" />
               <FormControlLabel value="aged" control={<Radio />} label="Age (descending)" />
