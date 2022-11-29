@@ -25,37 +25,113 @@ function App() {
   const [count, setCount] = useState(0);
   const [money, setMoney] = useState(0);
 
+  const [party, setParty] = useState("all");
+  const [chamber, setChamber] = useState("all");
 
+  // const [flag, setFlag] = useState(0);
+
+
+  useEffect(() => {
+    let matchesParty = false
+    let matchesChamber = false
+    const newFilter = data.filter(el => {
+      if (party !== "all") {
+        matchesParty = el.party == party
+      } else {
+        matchesParty = true
+      }
+      if (chamber !== "all") {
+        matchesChamber = el.legislativebody == chamber
+      } else {
+        matchesChamber = true
+      }
+      return matchesParty && matchesChamber
+      // conditionals to filter the list depending on party and chamber
+    })
+    setFilter(newFilter)
+    // the following states will trigger useEffect automatically
+  }, [party, chamber])
+
+
+
+  // let party_global = "all"
+  // let chamber_global = "all"
 
   // useEffect(() => {
   //   setFilter(data);
   // }, []);
 
-  function filtering_p(ptype) {
-    // setFilter(data.filter(item => item.party === ptype))
-    let filtering = data.filter(item => item.party === ptype)
-    console.log(filtering)
-    return filtering;
-  }
+  // function filtering_p(ptype) {
+  //   // setFilter(data.filter(item => item.party === ptype))
+  //   // let filtering = data.filter(item => item.party === ptype)
+  //   // console.log(filtering)
+  //   // return filtering;
+  //   // if (chamber !== "all" && flag === 0) {
+  //   //   let filtering = filtering_c(chamber).filter(item => item.party === ptype)
+  //   //   // setFlag(0);
+  //   //   return filtering;
+  //   // } else {
+  //     if (chamber !== "all") {
+  //       let filtering = data.filter(item => item.party === chamber).filter(item => item.party === ptype)
+  //       return filtering;
+  //     } else {
+  //       let filtering = data.filter(item => item.party === ptype)
+  //       return filtering;
+  //     }
+  //     // setFlag(0);
+      
+  //   // }
+  // }
 
   function handleType_p(e) {
-    let typeFilter = e.target.value;
-    typeFilter !== "all"
-      ? setFilter(filtering_p(typeFilter))
-      : setFilter(data);
+    // let typeFilter = e.target.value;
+    setParty(e.target.value);
+    // setFlag(1);
+    // console.log(flag)
+    // if (typeFilter !== "all") {
+    //   setFilter(filtering_p(typeFilter))
+    // } else {
+    //   if (chamber !== "all") {
+    //     setFilter(data.filter(item => item.party === chamber));
+    //   } else {
+    //     setFilter(data)
+    //   }
+    // }
   }
 
-  function filtering_c(ptype) {
-    // setFilter(data.filter(item => item.party === ptype))
-    let filtering = data.filter(item => item.legislativebody === ptype)
-    return filtering;
-  }
+  // function filtering_c(ptype) {
+  //   // setFilter(data.filter(item => item.party === ptype))
+  //   // if (party !== "all" && flag === 0) {
+  //   //   let filtering = filtering_p(party).filter(item => item.legislativebody === ptype)
+  //   //   // setFlag(0);
+  //   //   return filtering;
+  //   // } else {
+  //     if (party !== "all") {
+  //       let filtering = data.filter(item => item.party === party).filter(item => item.legislativebody === ptype)
+  //       return filtering;
+  //     } else {
+  //       let filtering = data.filter(item => item.legislativebody === ptype)
+  //       return filtering;
+  //     }
+  //     // setFlag(0);
+      
+  //   // }
+  // }
 
   function handleType_c(e) {
-    let typeFilter = e.target.value;
-    typeFilter !== "all"
-      ? setFilter(filtering_c(typeFilter))
-      : setFilter(data);
+    // let typeFilter = e.target.value;
+    setChamber(e.target.value);
+    // setFlag(1);
+    // console.log(flag)
+    // if (typeFilter !== "all") {
+    //   setFilter(filtering_c(typeFilter))
+    // } else {
+    //   if (party !== "all") {
+    //     setFilter(data.filter(item => item.party === party))
+    //   } else {
+    //     setFilter(data)
+    //   }
+    // }
   }
 
   function age_change(e) {
@@ -67,7 +143,7 @@ function App() {
       setFilter([...filter].sort((a, b) => b.age - a.age))
     }
     if (typeFilter === "reset") {
-      setFilter(data)
+      setFilter([...filter])
     }
   }
 
@@ -135,7 +211,7 @@ function App() {
             >
               <FormControlLabel value="agea" control={<Radio />} label="Age (ascending)" />
               <FormControlLabel value="aged" control={<Radio />} label="Age (descending)" />
-              <FormControlLabel value="reset" control={<Radio />} label="Reset" />
+              <FormControlLabel value="reset" control={<Radio />} label="Unsort" />
 
             </RadioGroup>
           </FormControl>
