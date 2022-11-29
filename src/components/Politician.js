@@ -1,6 +1,4 @@
 import "./politician.css";
-import { useState } from "react";
-
 
 export default function Politician({name, title, leg, age, party, lobby, image, cart, setCart, count, setCount, money, setMoney}) {
 
