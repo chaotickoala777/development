@@ -52,86 +52,12 @@ function App() {
     // the following states will trigger useEffect automatically
   }, [party, chamber])
 
-
-
-  // let party_global = "all"
-  // let chamber_global = "all"
-
-  // useEffect(() => {
-  //   setFilter(data);
-  // }, []);
-
-  // function filtering_p(ptype) {
-  //   // setFilter(data.filter(item => item.party === ptype))
-  //   // let filtering = data.filter(item => item.party === ptype)
-  //   // console.log(filtering)
-  //   // return filtering;
-  //   // if (chamber !== "all" && flag === 0) {
-  //   //   let filtering = filtering_c(chamber).filter(item => item.party === ptype)
-  //   //   // setFlag(0);
-  //   //   return filtering;
-  //   // } else {
-  //     if (chamber !== "all") {
-  //       let filtering = data.filter(item => item.party === chamber).filter(item => item.party === ptype)
-  //       return filtering;
-  //     } else {
-  //       let filtering = data.filter(item => item.party === ptype)
-  //       return filtering;
-  //     }
-  //     // setFlag(0);
-      
-  //   // }
-  // }
-
   function handleType_p(e) {
-    // let typeFilter = e.target.value;
     setParty(e.target.value);
-    // setFlag(1);
-    // console.log(flag)
-    // if (typeFilter !== "all") {
-    //   setFilter(filtering_p(typeFilter))
-    // } else {
-    //   if (chamber !== "all") {
-    //     setFilter(data.filter(item => item.party === chamber));
-    //   } else {
-    //     setFilter(data)
-    //   }
-    // }
   }
 
-  // function filtering_c(ptype) {
-  //   // setFilter(data.filter(item => item.party === ptype))
-  //   // if (party !== "all" && flag === 0) {
-  //   //   let filtering = filtering_p(party).filter(item => item.legislativebody === ptype)
-  //   //   // setFlag(0);
-  //   //   return filtering;
-  //   // } else {
-  //     if (party !== "all") {
-  //       let filtering = data.filter(item => item.party === party).filter(item => item.legislativebody === ptype)
-  //       return filtering;
-  //     } else {
-  //       let filtering = data.filter(item => item.legislativebody === ptype)
-  //       return filtering;
-  //     }
-  //     // setFlag(0);
-      
-  //   // }
-  // }
-
   function handleType_c(e) {
-    // let typeFilter = e.target.value;
     setChamber(e.target.value);
-    // setFlag(1);
-    // console.log(flag)
-    // if (typeFilter !== "all") {
-    //   setFilter(filtering_c(typeFilter))
-    // } else {
-    //   if (party !== "all") {
-    //     setFilter(data.filter(item => item.party === party))
-    //   } else {
-    //     setFilter(data)
-    //   }
-    // }
   }
 
   function age_change(e) {
@@ -142,9 +68,10 @@ function App() {
     if (typeFilter === "aged") {
       setFilter([...filter].sort((a, b) => b.age - a.age))
     }
-    if (typeFilter === "reset") {
-      setFilter([...filter])
-    }
+    // if (typeFilter === "reset") {
+    //   setChamber(chamber)
+    //   setFilter(filter)
+    // }
   }
 
   return (
@@ -165,7 +92,7 @@ function App() {
             >
               <FormControlLabel value="Democrat" eventkey="democrat" control={<Radio />} label="Democrat" />
               <FormControlLabel value="Republican" eventkey="republican" control={<Radio />} label="Republican" />
-              <FormControlLabel value="all" eventkey="All" control={<Radio />} label="All" />
+              <FormControlLabel value="all" eventkey="All" control={<Radio />} label="Reset" />
 
             </RadioGroup>
           </FormControl>
@@ -187,7 +114,7 @@ function App() {
             >
               <FormControlLabel value="House of Representatives" control={<Radio />} label="House" />
               <FormControlLabel value="Senate" control={<Radio />} label="Senate" />
-              <FormControlLabel value="all" control={<Radio />} label="All" />
+              <FormControlLabel value="all" control={<Radio />} label="Reset" />
 
             </RadioGroup>
           </FormControl>
@@ -211,22 +138,27 @@ function App() {
             >
               <FormControlLabel value="agea" control={<Radio />} label="Age (ascending)" />
               <FormControlLabel value="aged" control={<Radio />} label="Age (descending)" />
-              <FormControlLabel value="reset" control={<Radio />} label="Unsort" />
+              {/* <FormControlLabel value="reset" control={<Radio />} label="Unsort" /> */}
 
             </RadioGroup>
           </FormControl>
 
-            {/* <button onClick={() => {
-                  setFilter([...filter].sort((a, b) => a.age - b.age))
-                }
-            }>Sort by: Age - ascending</button>
+        </div>
 
+        <br></br>
+        <br></br>
 
-            <button onClick={() => {
-                  setFilter([...filter].sort((a, b) => b.age - a.age))
-                }
-            }>Sort by: Age - descending</button> */}
-
+        <div>
+          <button onClick={() => {
+                    // setFilter(data)
+                    setCart([])
+                    setCount(0)
+                    setMoney(0)
+                    // setParty("all")
+                    // setChamber("all")
+                    // const [value, setValue] = useState("all");
+                  }
+              }>Reset Compilation</button>
         </div>
 
         <div>
