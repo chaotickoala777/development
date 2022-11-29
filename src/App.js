@@ -53,27 +53,11 @@ function App() {
         output = b.age - a.age
       }
       return output
-      // conditionals to filter the list depending on party and chamber
+      // conditionals to sort the list depending on ascending or descending
     })
     setFilter(newSort)
     // the following states will trigger useEffect automatically
   }, [party, chamber, sort])
-
-  useEffect(() => {
-    let output = 0
-    const newSort = [...filter].sort((a,b) => {
-      if (sort === "agea") {
-        output = a.age - b.age
-      } 
-      if (sort === "aged") {
-        output = b.age - a.age
-      }
-      return output
-      // conditionals to filter the list depending on party and chamber
-    })
-    setFilter(newSort)
-    // the following states will trigger useEffect automatically
-  }, [sort])
 
   function handleType_p(e) {
     setParty(e.target.value);
@@ -84,17 +68,7 @@ function App() {
   }
 
   function age_change(e) {
-    // let typeFilter = e.target.value;
-    // if (typeFilter === "agea") {
-    //   setFilter([...filter].sort((a, b) => a.age - b.age))
-    // }
-    // if (typeFilter === "aged") {
-    //   setFilter([...filter].sort((a, b) => b.age - a.age))
-    // }
     setSort(e.target.value)
-    // if (typeFilter === "reset") {
-    //   setFilter(filter)
-    // }
   }
 
   return (
@@ -154,8 +128,6 @@ function App() {
             >
               <FormControlLabel value="agea" control={<Radio />} label="Age (ascending)" />
               <FormControlLabel value="aged" control={<Radio />} label="Age (descending)" />
-              {/* <FormControlLabel value="reset" control={<Radio />} label="Reset" /> */}
-
             </RadioGroup>
           </FormControl>
         </div>
@@ -172,7 +144,6 @@ function App() {
               }>Reset Supporters / Accumulator</button>
         </div>
 
-
         <br></br>
 
         <div>
@@ -188,7 +159,6 @@ function App() {
           <h4>Votes: {count}</h4>
           <h4>Lobbyist funding: {money}</h4>
         </div>
-
       </div>
 
       <div className="people">
