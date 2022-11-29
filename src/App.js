@@ -14,12 +14,8 @@ data.forEach((item) => {
 /* ############################################################## */
 
 function App() {
-  // TODO: use useState to create a state variable to hold the state of the cart
-  /* add your cart state code here */
 
-  // const [total, setTotal] = useState(0)
   const [cart, setCart] = useState([])
-  // const [value, setValue] = useState("all");
   const [filter, setFilter] = useState(data);
 
   const [count, setCount] = useState(0);
@@ -27,9 +23,6 @@ function App() {
 
   const [party, setParty] = useState("all");
   const [chamber, setChamber] = useState("all");
-
-  // const [flag, setFlag] = useState(0);
-
 
   useEffect(() => {
     let matchesParty = false
@@ -68,20 +61,15 @@ function App() {
     if (typeFilter === "aged") {
       setFilter([...filter].sort((a, b) => b.age - a.age))
     }
-    // if (typeFilter === "reset") {
-    //   setChamber(chamber)
-    //   setFilter(filter)
-    // }
   }
 
   return (
     <div className="App">
-      <h1>Vote Tracker</h1> {/* TODO: personalize your bakery (if you want) */}
+      <h1>Vote Tracker</h1> 
 
       <div className="filter">
 
         <div>
-
           <FormControl>
             <FormLabel id="demo-radio-buttons-group-label">Party</FormLabel>
             <RadioGroup
@@ -96,14 +84,12 @@ function App() {
 
             </RadioGroup>
           </FormControl>
-
         </div>
 
         <br></br>
         <br></br>
 
         <div>
-
           <FormControl>
             <FormLabel id="demo-radio-buttons-group-label">Legislative Body</FormLabel>
             <RadioGroup
@@ -118,16 +104,12 @@ function App() {
 
             </RadioGroup>
           </FormControl>
-
         </div>
 
         <br></br>
         <br></br>
 
-        {/* onChange={setFilter([...data].sort((a, b) => a.age - b.age))}  */}
-
         <div>
-
           <FormControl>
             <FormLabel id="demo-radio-buttons-group-label">Sort by:</FormLabel>
             <RadioGroup
@@ -138,11 +120,9 @@ function App() {
             >
               <FormControlLabel value="agea" control={<Radio />} label="Age (ascending)" />
               <FormControlLabel value="aged" control={<Radio />} label="Age (descending)" />
-              {/* <FormControlLabel value="reset" control={<Radio />} label="Unsort" /> */}
 
             </RadioGroup>
           </FormControl>
-
         </div>
 
         <br></br>
@@ -150,13 +130,9 @@ function App() {
 
         <div>
           <button onClick={() => {
-                    // setFilter(data)
                     setCart([])
                     setCount(0)
                     setMoney(0)
-                    // setParty("all")
-                    // setChamber("all")
-                    // const [value, setValue] = useState("all");
                   }
               }>Reset Compilation</button>
         </div>
@@ -164,27 +140,21 @@ function App() {
         <div>
           <h3>Supporters</h3>
           <div>
-
             {
-            cart.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
-            // <p>Bakery Item {index}</p> // replace with BakeryItem component
+            cart.map((item, index) => ( 
             <div>
               {item}
             </div>
             ))}
-
           </div>
           <p>Votes: {count}</p>
           <p>Lobbyist funding: {money}</p>
-    
-          {/* TODO: render a list of items in the cart */}
         </div>
 
       </div>
 
       <div className="people">
-        {filter.map((item) => ( // TODO: map bakeryData to BakeryItem components
-          // <p>Bakery Item {index}</p> // replace with BakeryItem componen
+        {filter.map((item) => ( 
           <Politician name={item.name} title={item.title} leg={item.legislativebody} age={item.age} party={item.party} lobby={item.lobby} image={item.image} cart={cart} setCart={setCart} count={count} setCount={setCount} money={money} setMoney={setMoney} />
         ))}
       </div>
@@ -193,6 +163,5 @@ function App() {
     
   );
 }
-
 export default App;
 
