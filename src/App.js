@@ -169,8 +169,11 @@ function App() {
                     setCount(0)
                     setMoney(0)
                   }
-              }>Reset Accumulator</button>
+              }>Reset Supporters / Accumulator</button>
         </div>
+
+
+        <br></br>
 
         <div>
           <h3>Supporters</h3>
