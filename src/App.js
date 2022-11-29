@@ -92,7 +92,7 @@ function App() {
             >
               <FormControlLabel value="Democrat" eventkey="democrat" control={<Radio />} label="Democrat" />
               <FormControlLabel value="Republican" eventkey="republican" control={<Radio />} label="Republican" />
-              <FormControlLabel value="all" eventkey="All" control={<Radio />} label="Reset" />
+              <FormControlLabel value="all" eventkey="All" control={<Radio />} label="All / Reset" />
 
             </RadioGroup>
           </FormControl>
@@ -114,7 +114,7 @@ function App() {
             >
               <FormControlLabel value="House of Representatives" control={<Radio />} label="House" />
               <FormControlLabel value="Senate" control={<Radio />} label="Senate" />
-              <FormControlLabel value="all" control={<Radio />} label="Reset" />
+              <FormControlLabel value="all" control={<Radio />} label="All / Reset" />
 
             </RadioGroup>
           </FormControl>
