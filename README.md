@@ -33,10 +33,20 @@ Lastly, I visually separated each card with the gray background to ensure there
 was proper hierarchy and politician images and data would be properly 
 associated with each other. 
 
-
 ### Organization of Components
+The main component I have is a Politician (located in the Politician.js file).
+In the App class, I pass props (which contain the data for each politician
+from the data.json file) into the politician class. In the App class, I then 
+use map to display each desired component (based on the filters and sorting).
+In the Politician component, I then create and style each card, create the in 
+support and opposed buttons, and also change the states of different variables 
+(accumulator, number of votes, and total funding).  
 
 ### How Data is Passed Down Through Components
+I only have one component, and data (which is from the data.json file) is 
+passed into it using props. In addition to the politician data, I pass in different
+useState operations to update necessary data (accumulator, number of votes, and 
+total funding).
 
 ### How the User Triggers State Changes
 
